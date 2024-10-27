@@ -68,7 +68,7 @@ class EventDetails extends StatelessWidget {
                         color: Colors.transparent,
                         borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(49),
-                            bottomRight: Radius.circular(44)),
+                            bottomRight: Radius.circular(48)),
                         boxShadow: [
                           BoxShadow(
                             color: const Color.fromARGB(255, 94, 92, 92)
@@ -166,62 +166,70 @@ class EventDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    'Harmony Nights',
-                    style: GoogleFonts.outfit(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  Row(
-                    children: [
-                      SvgPicture.asset('assets/images/Group.svg'),
-                      const SizedBox(width: 7),
-                      Text(
-                        '06:30 PM, 17 Oct 2024',
-                        style: GoogleFonts.outfit(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SvgPicture.asset('assets/images/loc.svg'),
-                      const SizedBox(width: 7),
-                      Text(
-                        'Old Harbour Hotel, Fort Kochi',
-                        style: GoogleFonts.outfit(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      for (int i = 0; i < 3; i++)
-                        Align(
-                          widthFactor: 0.5,
-                          child: CircleAvatar(
-                            radius: 13,
-                            backgroundImage: AssetImage(imageAvatar[i]),
-                          ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Harmony Nights',
+                          style: GoogleFonts.outfit(
+                              color: Colors.black,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700),
                         ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        '1k+ attending',
-                        style: GoogleFonts.outfit(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ],
+                        Row(
+                          children: [
+                            SvgPicture.asset('assets/images/Group.svg'),
+                            const SizedBox(width: 7),
+                            Text(
+                              '06:30 PM, 17 Oct 2024',
+                              style: GoogleFonts.outfit(
+                                  color: Colors.black,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SvgPicture.asset('assets/images/loc.svg'),
+                            const SizedBox(width: 7),
+                            Text(
+                              'Old Harbour Hotel, Fort Kochi',
+                              style: GoogleFonts.outfit(
+                                  color: Colors.black,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            for (int i = 0; i < 3; i++)
+                              Align(
+                                widthFactor: 0.5,
+                                child: CircleAvatar(
+                                  radius: 13,
+                                  backgroundImage: AssetImage(imageAvatar[i]),
+                                ),
+                              ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              '1k+ attending',
+                              style: GoogleFonts.outfit(
+                                  color: Colors.black,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   ListTile(
                       leading: const CircleAvatar(
@@ -406,7 +414,7 @@ class EventDetails extends StatelessWidget {
                             padding: const EdgeInsets.only(bottom: 9.5),
                             child: Container(
                               height: 50,
-                              width: 350,
+                              width: 340,
                               decoration: BoxDecoration(
                                 color: Colors.transparent,
                                 borderRadius: const BorderRadius.only(
@@ -574,7 +582,7 @@ class EventDetails extends StatelessWidget {
                             padding: const EdgeInsets.only(bottom: 9.5),
                             child: Container(
                               height: 50,
-                              width: 350,
+                              width: 340,
                               decoration: BoxDecoration(
                                 color: Colors.transparent,
                                 borderRadius: const BorderRadius.only(
@@ -742,7 +750,7 @@ class EventDetails extends StatelessWidget {
                             padding: const EdgeInsets.only(bottom: 9.5),
                             child: Container(
                               height: 50,
-                              width: 350,
+                              width: 340,
                               decoration: BoxDecoration(
                                 color: Colors.transparent,
                                 borderRadius: const BorderRadius.only(
