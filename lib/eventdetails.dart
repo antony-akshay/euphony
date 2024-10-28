@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
 import 'package:svg_flutter/svg.dart';
@@ -20,14 +21,16 @@ class EventDetails extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SizedBox.fromSize(
-        size: const Size(360, 60),
+        size: Size(360.w, 60.h),
         child: FloatingActionButton(
           onPressed: () {},
           backgroundColor: Colors.blue[800],
           child: Text(
             'Book Now',
             style: GoogleFonts.outfit(
-                color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14),
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+                fontSize: 14.sp),
           ),
         ),
       ),
@@ -37,8 +40,8 @@ class EventDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 352,
-              width: 402,
+              height: 352.h,
+              width: 402.w,
               decoration: const BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
@@ -60,10 +63,10 @@ class EventDetails extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 8.4),
+                    padding: EdgeInsets.only(bottom: 8.4.h),
                     child: Container(
-                      width: 397,
-                      height: 50,
+                      width: 397.w,
+                      height: 50.h,
                       decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: const BorderRadius.only(
@@ -80,17 +83,17 @@ class EventDetails extends StatelessWidget {
                         ],
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 16),
+                        padding: EdgeInsets.only(right: 16.w),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 20),
+                                  padding: EdgeInsets.only(left: 20.w),
                                   child: Container(
-                                    width: 90,
-                                    height: 30,
+                                    width: 90.w,
+                                    height: 30.h,
                                     decoration: BoxDecoration(
                                       color: Colors.transparent,
                                       borderRadius: BorderRadius.circular(30),
@@ -110,17 +113,17 @@ class EventDetails extends StatelessWidget {
                                         '1k+ attending',
                                         style: GoogleFonts.outfit(
                                             color: Colors.white,
-                                            fontSize: 10,
+                                            fontSize: 10.sp,
                                             fontWeight: FontWeight.w400),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 20),
+                                  padding: EdgeInsets.only(left: 20.w),
                                   child: Container(
-                                    width: 90,
-                                    height: 30,
+                                    width: 90.w,
+                                    height: 30.h,
                                     decoration: BoxDecoration(
                                       color: Colors.transparent,
                                       borderRadius: BorderRadius.circular(30),
@@ -140,7 +143,7 @@ class EventDetails extends StatelessWidget {
                                         'Music',
                                         style: GoogleFonts.outfit(
                                             color: Colors.white,
-                                            fontSize: 10,
+                                            fontSize: 10.sp,
                                             fontWeight: FontWeight.w400),
                                       ),
                                     ),
@@ -161,13 +164,13 @@ class EventDetails extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 8),
+                    padding: EdgeInsets.only(left: 8.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -175,18 +178,18 @@ class EventDetails extends StatelessWidget {
                           'Harmony Nights',
                           style: GoogleFonts.outfit(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 24.sp,
                               fontWeight: FontWeight.w700),
                         ),
                         Row(
                           children: [
                             SvgPicture.asset('assets/images/Group.svg'),
-                            const SizedBox(width: 7),
+                            SizedBox(width: 7.w),
                             Text(
                               '06:30 PM, 17 Oct 2024',
                               style: GoogleFonts.outfit(
                                   color: Colors.black,
-                                  fontSize: 11,
+                                  fontSize: 11.sp,
                                   fontWeight: FontWeight.w400),
                             ),
                           ],
@@ -194,17 +197,17 @@ class EventDetails extends StatelessWidget {
                         Row(
                           children: [
                             SvgPicture.asset('assets/images/loc.svg'),
-                            const SizedBox(width: 7),
+                            SizedBox(width: 7.w),
                             Text(
                               'Old Harbour Hotel, Fort Kochi',
                               style: GoogleFonts.outfit(
                                   color: Colors.black,
-                                  fontSize: 11,
+                                  fontSize: 11.sp,
                                   fontWeight: FontWeight.w400),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -212,18 +215,18 @@ class EventDetails extends StatelessWidget {
                               Align(
                                 widthFactor: 0.5,
                                 child: CircleAvatar(
-                                  radius: 13,
+                                  radius: 13.r,
                                   backgroundImage: AssetImage(imageAvatar[i]),
                                 ),
                               ),
-                            const SizedBox(
-                              width: 5,
+                            SizedBox(
+                              width: 5.w,
                             ),
                             Text(
                               '1k+ attending',
                               style: GoogleFonts.outfit(
                                   color: Colors.black,
-                                  fontSize: 11,
+                                  fontSize: 11.sp,
                                   fontWeight: FontWeight.w400),
                             ),
                           ],
@@ -240,21 +243,21 @@ class EventDetails extends StatelessWidget {
                         'Beyoncé’s',
                         style: GoogleFonts.outfit(
                             color: Colors.black,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w500),
                       ),
                       subtitle: Text(
                         'Event Organizer',
                         style: GoogleFonts.outfit(
                             color: Colors.black,
-                            fontSize: 11,
+                            fontSize: 11.sp,
                             fontWeight: FontWeight.w400),
                       ),
                       trailing: GestureDetector(
                         onTap: () {},
                         child: Container(
-                          width: 73,
-                          height: 30,
+                          width: 73.w,
+                          height: 30.h,
                           decoration: BoxDecoration(
                               color: Colors.blue[400],
                               borderRadius: BorderRadius.circular(30)),
@@ -263,7 +266,7 @@ class EventDetails extends StatelessWidget {
                               'Follow',
                               style: GoogleFonts.outfit(
                                   color: Colors.white,
-                                  fontSize: 12,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.w400),
                             ),
                           ),
@@ -273,7 +276,7 @@ class EventDetails extends StatelessWidget {
                     'About this event',
                     style: GoogleFonts.outfit(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w600),
                   ),
                   ReadMoreText(
@@ -285,44 +288,45 @@ class EventDetails extends StatelessWidget {
                     trimExpandedText: 'read less',
                     lessStyle: GoogleFonts.outfit(
                         color: Colors.indigo,
-                        fontSize: 10,
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w300),
                     moreStyle: GoogleFonts.outfit(
                         color: Colors.indigo,
-                        fontSize: 10,
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w300),
                     style: GoogleFonts.outfit(
                         color: Colors.black,
-                        fontSize: 10,
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w300),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 5),
+                    padding: EdgeInsets.only(top: 5.h),
                     child: GestureDetector(
                         onTap: () {},
                         child: Container(
-                          width: 360,
-                          height: 140,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10)
-                          ),
-                          child: Image.asset('assets/images/Mask group.jpg'))),
+                            width: 360.w,
+                            height: 140.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child:
+                                Image.asset('assets/images/Mask group.jpg'))),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10.0,left: 5),
+                    padding: EdgeInsets.only(top: 10.h, left: 5.w),
                     child: Text(
                       'Featured Events',
                       style: GoogleFonts.outfit(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 10.h),
                     child: Container(
-                      width: 360,
-                      height: 170,
+                      width: 360.w,
+                      height: 170.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
@@ -333,17 +337,17 @@ class EventDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 16, top: 10),
+                            padding: EdgeInsets.only(right: 16.w, top: 10.h),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 20),
+                                      padding: EdgeInsets.only(left: 20.w),
                                       child: Container(
-                                        width: 90,
-                                        height: 30,
+                                        width: 90.w,
+                                        height: 30.h,
                                         decoration: BoxDecoration(
                                           color: Colors.transparent,
                                           borderRadius:
@@ -364,17 +368,17 @@ class EventDetails extends StatelessWidget {
                                             '1k+ attending',
                                             style: GoogleFonts.outfit(
                                                 color: Colors.white,
-                                                fontSize: 10,
+                                                fontSize: 10.sp,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 20),
+                                      padding: EdgeInsets.only(left: 20.w),
                                       child: Container(
-                                        width: 90,
-                                        height: 30,
+                                        width: 90.w,
+                                        height: 30.h,
                                         decoration: BoxDecoration(
                                           color: Colors.transparent,
                                           borderRadius:
@@ -395,7 +399,7 @@ class EventDetails extends StatelessWidget {
                                             'Music',
                                             style: GoogleFonts.outfit(
                                                 color: Colors.white,
-                                                fontSize: 10,
+                                                fontSize: 10.sp,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
@@ -411,10 +415,10 @@ class EventDetails extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 9.5),
+                            padding: EdgeInsets.only(bottom: 9.5.h),
                             child: Container(
-                              height: 50,
-                              width: 340,
+                              height: 50.h,
+                              width: 340.w,
                               decoration: BoxDecoration(
                                 color: Colors.transparent,
                                 borderRadius: const BorderRadius.only(
@@ -431,8 +435,8 @@ class EventDetails extends StatelessWidget {
                                 ],
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10, top: 2, right: 10),
+                                padding: EdgeInsets.only(
+                                    left: 10.w, top: 2.h, right: 10.w),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -448,25 +452,25 @@ class EventDetails extends StatelessWidget {
                                           style: GoogleFonts.outfit(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 15),
+                                              fontSize: 15.sp),
                                         ),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
-                                            const Icon(
+                                            Icon(
                                               Icons.location_on_outlined,
                                               color: Colors.white,
-                                              size: 19,
+                                              size: 19.r,
                                             ),
-                                            const SizedBox(
-                                              width: 5,
+                                            SizedBox(
+                                              width: 5.w,
                                             ),
                                             Text(
                                               'Kochi • 17 Oct 2024',
                                               style: GoogleFonts.outfit(
                                                   fontWeight: FontWeight.w400,
-                                                  fontSize: 11,
+                                                  fontSize: 11.sp,
                                                   color: Colors.white),
                                             )
                                           ],
@@ -487,10 +491,10 @@ class EventDetails extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 10.h),
                     child: Container(
-                      width: 360,
-                      height: 170,
+                      width: 360.w,
+                      height: 170.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
@@ -501,17 +505,17 @@ class EventDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 16, top: 10),
+                            padding: EdgeInsets.only(right: 16.w, top: 10.h),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 20),
+                                      padding: EdgeInsets.only(left: 20.w),
                                       child: Container(
-                                        width: 90,
-                                        height: 30,
+                                        width: 90.w,
+                                        height: 30.h,
                                         decoration: BoxDecoration(
                                           color: Colors.transparent,
                                           borderRadius:
@@ -532,17 +536,17 @@ class EventDetails extends StatelessWidget {
                                             '1k+ attending',
                                             style: GoogleFonts.outfit(
                                                 color: Colors.white,
-                                                fontSize: 10,
+                                                fontSize: 10.sp,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 20),
+                                      padding: EdgeInsets.only(left: 20.w),
                                       child: Container(
-                                        width: 90,
-                                        height: 30,
+                                        width: 90.w,
+                                        height: 30.h,
                                         decoration: BoxDecoration(
                                           color: Colors.transparent,
                                           borderRadius:
@@ -563,7 +567,7 @@ class EventDetails extends StatelessWidget {
                                             'Music',
                                             style: GoogleFonts.outfit(
                                                 color: Colors.white,
-                                                fontSize: 10,
+                                                fontSize: 10.sp,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
@@ -579,10 +583,10 @@ class EventDetails extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 9.5),
+                            padding: EdgeInsets.only(bottom: 9.5.h),
                             child: Container(
-                              height: 50,
-                              width: 340,
+                              height: 50.h,
+                              width: 340.w,
                               decoration: BoxDecoration(
                                 color: Colors.transparent,
                                 borderRadius: const BorderRadius.only(
@@ -599,8 +603,8 @@ class EventDetails extends StatelessWidget {
                                 ],
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10, top: 2, right: 10),
+                                padding: EdgeInsets.only(
+                                    left: 10.w, top: 2.h, right: 10.w),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -616,25 +620,25 @@ class EventDetails extends StatelessWidget {
                                           style: GoogleFonts.outfit(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 15),
+                                              fontSize: 15.sp),
                                         ),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
-                                            const Icon(
+                                            Icon(
                                               Icons.location_on_outlined,
                                               color: Colors.white,
-                                              size: 19,
+                                              size: 19.r,
                                             ),
-                                            const SizedBox(
-                                              width: 5,
+                                            SizedBox(
+                                              width: 5.w,
                                             ),
                                             Text(
                                               'Kochi • 17 Oct 2024',
                                               style: GoogleFonts.outfit(
                                                   fontWeight: FontWeight.w400,
-                                                  fontSize: 11,
+                                                  fontSize: 11.sp,
                                                   color: Colors.white),
                                             )
                                           ],
@@ -655,10 +659,10 @@ class EventDetails extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 10.h),
                     child: Container(
-                      width: 360,
-                      height: 170,
+                      width: 360.w,
+                      height: 170.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
@@ -669,17 +673,17 @@ class EventDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(right: 16, top: 10),
+                            padding: EdgeInsets.only(right: 16.w, top: 10.h),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 20),
+                                      padding: EdgeInsets.only(left: 20.w),
                                       child: Container(
-                                        width: 90,
-                                        height: 30,
+                                        width: 90.w,
+                                        height: 30.h,
                                         decoration: BoxDecoration(
                                           color: Colors.transparent,
                                           borderRadius:
@@ -700,17 +704,17 @@ class EventDetails extends StatelessWidget {
                                             '1k+ attending',
                                             style: GoogleFonts.outfit(
                                                 color: Colors.white,
-                                                fontSize: 10,
+                                                fontSize: 10.sp,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 20),
+                                      padding: EdgeInsets.only(left: 20.w),
                                       child: Container(
-                                        width: 90,
-                                        height: 30,
+                                        width: 90.w,
+                                        height: 30.h,
                                         decoration: BoxDecoration(
                                           color: Colors.transparent,
                                           borderRadius:
@@ -731,7 +735,7 @@ class EventDetails extends StatelessWidget {
                                             'Music',
                                             style: GoogleFonts.outfit(
                                                 color: Colors.white,
-                                                fontSize: 10,
+                                                fontSize: 10.sp,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                         ),
@@ -747,10 +751,10 @@ class EventDetails extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 9.5),
+                            padding: EdgeInsets.only(bottom: 9.5.h),
                             child: Container(
-                              height: 50,
-                              width: 340,
+                              height: 50.h,
+                              width: 340.w,
                               decoration: BoxDecoration(
                                 color: Colors.transparent,
                                 borderRadius: const BorderRadius.only(
@@ -767,8 +771,8 @@ class EventDetails extends StatelessWidget {
                                 ],
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10, top: 2, right: 10),
+                                padding: EdgeInsets.only(
+                                    left: 10.w, top: 2.h, right: 10.w),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -784,25 +788,25 @@ class EventDetails extends StatelessWidget {
                                           style: GoogleFonts.outfit(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: 15),
+                                              fontSize: 15.sp),
                                         ),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
-                                            const Icon(
+                                            Icon(
                                               Icons.location_on_outlined,
                                               color: Colors.white,
-                                              size: 19,
+                                              size: 19.r,
                                             ),
-                                            const SizedBox(
-                                              width: 5,
+                                            SizedBox(
+                                              width: 5.w,
                                             ),
                                             Text(
                                               'Kochi • 17 Oct 2024',
                                               style: GoogleFonts.outfit(
                                                   fontWeight: FontWeight.w400,
-                                                  fontSize: 11,
+                                                  fontSize: 11.sp,
                                                   color: Colors.white),
                                             )
                                           ],
