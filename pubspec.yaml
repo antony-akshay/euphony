@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   readmore: ^3.0.0
   flutter_screenutil: ^5.9.3
+  input_quantity: ^2.4.1
 
 dev_dependencies:
   flutter_test:
