@@ -239,21 +239,24 @@ class EventDetails extends StatelessWidget {
                                   const SizedBox(
                                     height: 20,
                                   ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromRGBO(
-                                            44, 100, 227, 1),
-                                        borderRadius:
-                                            BorderRadius.circular(35)),
-                                    width: 360,
-                                    height: 60,
-                                    child: Center(
-                                      child: Text(
-                                        'Book My Ticket',
-                                        style: GoogleFonts.outfit(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 14.sp),
+                                  GestureDetector(
+                                    onTap: (){},
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: const Color.fromRGBO(
+                                              44, 100, 227, 1),
+                                          borderRadius:
+                                              BorderRadius.circular(35)),
+                                      width: 360,
+                                      height: 60,
+                                      child: Center(
+                                        child: Text(
+                                          'Book My Ticket',
+                                          style: GoogleFonts.outfit(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 14.sp),
+                                        ),
                                       ),
                                     ),
                                   )
@@ -545,7 +548,9 @@ class EventDetails extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 5.h),
                     child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          print('map');
+                        },
                         child: Container(
                             width: 360.w,
                             height: 140.h,
