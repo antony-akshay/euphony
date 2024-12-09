@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'eventdetails.dart';
+import 'eventDetails/eventdetails.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
