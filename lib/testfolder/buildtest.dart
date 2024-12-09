@@ -19,36 +19,36 @@ class buildtest extends StatelessWidget {
               /*
     increment, decrement an int
 */
-IncrementDecrementFormField<int>(
-    // an initial value
-    initialValue: 0,
+              IncrementDecrementFormField<int>(
+                // an initial value
+                initialValue: 0,
 
-    // return the widget you wish to hold the value, in this case Text
-    // if no value set 0, otherwise display the value as a string
-    displayBuilder: (value, field) {
-        return Text(
-            value == null ? "0" : value.toString(),
-        );
-    },
+                // return the widget you wish to hold the value, in this case Text
+                // if no value set 0, otherwise display the value as a string
+                displayBuilder: (value, field) {
+                  return Text(
+                    value == null ? "0" : value.toString(),
+                  );
+                },
 
-    // run when the left button is pressed (decrement)
-    // the current value is passed as a parameter
-    // return what you want to update the display value to
-    // when decrement is pressed. In this case if null 0,
-    // otherwise current value -1
-    onDecrement: (currentValue) {
-        return currentValue! - 1;
-    },
+                // run when the left button is pressed (decrement)
+                // the current value is passed as a parameter
+                // return what you want to update the display value to
+                // when decrement is pressed. In this case if null 0,
+                // otherwise current value -1
+                onDecrement: (currentValue) {
+                  return currentValue! - 1;
+                },
 
-    // run when the right button is pressed (increment)
-    // the current value is passed as a parameter
-    // return what you want to update the display value to
-    // when increment is pressed. In this case if null 0,
-    // otherwise current value +1
-    onIncrement: (currentValue) {
-        return currentValue! + 1;
-    },
-),
+                // run when the right button is pressed (increment)
+                // the current value is passed as a parameter
+                // return what you want to update the display value to
+                // when increment is pressed. In this case if null 0,
+                // otherwise current value +1
+                onIncrement: (currentValue) {
+                  return currentValue! + 1;
+                },
+              ),
               Padding(
                 padding: EdgeInsets.only(top: 10.h),
                 child: Container(
@@ -397,54 +397,55 @@ IncrementDecrementFormField<int>(
                   ),
                 ),
               ),
-
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Container(
-  width: 360.w,
-  height: 140.h,
-  decoration: BoxDecoration(
-    borderRadius: BorderRadius.circular(10),
-  ),
-  child: Stack(
-    children: [
-      // Background Image
-      ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: Image.asset(
-          'assets/images/Mask group.jpg',
-          fit: BoxFit.cover,
-          width: 360.w,
-          height: 140.h,
-        ),
-      ),
-      
-      // Positioned Text Button
-      Positioned(
-        bottom: 10.h, // Adjust bottom padding
-        left: 0,
-        right: 0,
-        child: Center(
-          child: Container(
-            width: 90,
-            height: 30,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Color.fromRGBO(92, 132, 225, 1)
-            ),
-            child: Center(
-              child: Text('View On Map',style: GoogleFonts.outfit(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 9.sp,
-                                              color: Colors.white,
-                                            ),),
-            ),
-          )
-        ),
-      ),
-    ],
-  ),
-)
+                width: 360.w,
+                height: 140.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Stack(
+                  children: [
+                    // Background Image
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/Mask group.jpg',
+                        fit: BoxFit.cover,
+                        width: 360.w,
+                        height: 140.h,
+                      ),
+                    ),
 
+                    // Positioned Text Button
+                    Positioned(
+                      bottom: 10.h, // Adjust bottom padding
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                          child: Container(
+                        width: 90,
+                        height: 30,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color.fromRGBO(92, 132, 225, 1)),
+                        child: Center(
+                          child: Text(
+                            'View On Map',
+                            style: GoogleFonts.outfit(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 9.sp,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      )),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

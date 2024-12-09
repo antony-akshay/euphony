@@ -304,18 +304,55 @@ class EventDetails extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 5.h),
-                    child: GestureDetector(
-                        onTap: () {
-                          print('map');
-                        },
-                        child: Container(
-                            width: 360.w,
-                            height: 140.h,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                width: 360.w,
+                height: 140.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Stack(
+                  children: [
+                    // Background Image
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/Mask group.jpg',
+                        fit: BoxFit.cover,
+                        width: 360.w,
+                        height: 140.h,
+                      ),
+                    ),
+
+                    // Positioned Text Button
+                    Positioned(
+                      bottom: 10.h, // Adjust bottom padding
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                          child: GestureDetector(
+                            onTap: ()=>print('map'),
+                            child: Container(
+                                                    width: 90,
+                                                    height: 30,
+                                                    decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color.fromRGBO(92, 132, 225, 1)),
+                                                    child: Center(
+                            child: Text(
+                              'View On Map',
+                              style: GoogleFonts.outfit(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 9.sp,
+                                color: Colors.white,
+                              ),
                             ),
-                            child:
-                                Image.asset('assets/images/Mask group.jpg'))),
+                                                    ),
+                                                  ),
+                          )),
+                    ),
+                  ],
+                ),
+              )
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 10.h, left: 5.w),

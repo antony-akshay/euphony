@@ -207,7 +207,9 @@ class Helperwidgets {
                           height: 30,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            // print('bookmyticket');
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 color: const Color.fromRGBO(44, 100, 227, 1),
