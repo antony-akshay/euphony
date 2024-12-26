@@ -1,4 +1,7 @@
+import 'package:evm/application/bloc/home_bloc.dart';
+import 'package:evm/presentation/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'eventDetails/eventdetails.dart';
@@ -15,9 +18,12 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: EventDetails(),
+        return BlocProvider(
+          create: (context) => HomeBloc(),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Homescreen(),
+          ),
         );
       },
     );
