@@ -20,32 +20,38 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
+    required TResult Function(String usernameStr) usernameSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
+    TResult? Function(String usernameStr)? usernameSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
+    TResult Function(String usernameStr)? usernameSubmit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_UsernameSubmit value) usernameSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_UsernameSubmit value)? usernameSubmit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_UsernameSubmit value)? usernameSubmit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,6 +180,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
+    required TResult Function(String usernameStr) usernameSubmit,
   }) {
     return usernameChanged(usernameStr);
   }
@@ -182,6 +189,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
+    TResult? Function(String usernameStr)? usernameSubmit,
   }) {
     return usernameChanged?.call(usernameStr);
   }
@@ -190,6 +198,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
+    TResult Function(String usernameStr)? usernameSubmit,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -202,6 +211,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_UsernameSubmit value) usernameSubmit,
   }) {
     return usernameChanged(this);
   }
@@ -210,6 +220,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_UsernameSubmit value)? usernameSubmit,
   }) {
     return usernameChanged?.call(this);
   }
@@ -218,6 +229,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_UsernameSubmit value)? usernameSubmit,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -243,10 +255,169 @@ abstract class _UsernameChanged implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$UsernameSubmitImplCopyWith<$Res>
+    implements $HomeEventCopyWith<$Res> {
+  factory _$$UsernameSubmitImplCopyWith(_$UsernameSubmitImpl value,
+          $Res Function(_$UsernameSubmitImpl) then) =
+      __$$UsernameSubmitImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String usernameStr});
+}
+
+/// @nodoc
+class __$$UsernameSubmitImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$UsernameSubmitImpl>
+    implements _$$UsernameSubmitImplCopyWith<$Res> {
+  __$$UsernameSubmitImplCopyWithImpl(
+      _$UsernameSubmitImpl _value, $Res Function(_$UsernameSubmitImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? usernameStr = null,
+  }) {
+    return _then(_$UsernameSubmitImpl(
+      null == usernameStr
+          ? _value.usernameStr
+          : usernameStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UsernameSubmitImpl
+    with DiagnosticableTreeMixin
+    implements _UsernameSubmit {
+  const _$UsernameSubmitImpl(this.usernameStr);
+
+  @override
+  final String usernameStr;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeEvent.usernameSubmit(usernameStr: $usernameStr)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeEvent.usernameSubmit'))
+      ..add(DiagnosticsProperty('usernameStr', usernameStr));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsernameSubmitImpl &&
+            (identical(other.usernameStr, usernameStr) ||
+                other.usernameStr == usernameStr));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, usernameStr);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsernameSubmitImplCopyWith<_$UsernameSubmitImpl> get copyWith =>
+      __$$UsernameSubmitImplCopyWithImpl<_$UsernameSubmitImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String usernameStr) usernameChanged,
+    required TResult Function(String usernameStr) usernameSubmit,
+  }) {
+    return usernameSubmit(usernameStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String usernameStr)? usernameChanged,
+    TResult? Function(String usernameStr)? usernameSubmit,
+  }) {
+    return usernameSubmit?.call(usernameStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String usernameStr)? usernameChanged,
+    TResult Function(String usernameStr)? usernameSubmit,
+    required TResult orElse(),
+  }) {
+    if (usernameSubmit != null) {
+      return usernameSubmit(usernameStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_UsernameSubmit value) usernameSubmit,
+  }) {
+    return usernameSubmit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_UsernameSubmit value)? usernameSubmit,
+  }) {
+    return usernameSubmit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_UsernameSubmit value)? usernameSubmit,
+    required TResult orElse(),
+  }) {
+    if (usernameSubmit != null) {
+      return usernameSubmit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UsernameSubmit implements HomeEvent {
+  const factory _UsernameSubmit(final String usernameStr) =
+      _$UsernameSubmitImpl;
+
+  @override
+  String get usernameStr;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UsernameSubmitImplCopyWith<_$UsernameSubmitImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   Username get username => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -260,7 +431,11 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({Username username, bool showErrorMessages, bool isSubmitting});
+  $Res call(
+      {Username username,
+      bool showErrorMessages,
+      bool isSubmitting,
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -281,6 +456,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? username = null,
     Object? showErrorMessages = null,
     Object? isSubmitting = null,
+    Object? authFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
       username: null == username
@@ -295,6 +471,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
+      authFailureOrSuccessOption: null == authFailureOrSuccessOption
+          ? _value.authFailureOrSuccessOption
+          : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, Unit>>,
     ) as $Val);
   }
 }
@@ -307,7 +487,11 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Username username, bool showErrorMessages, bool isSubmitting});
+  $Res call(
+      {Username username,
+      bool showErrorMessages,
+      bool isSubmitting,
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -326,6 +510,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
     Object? username = null,
     Object? showErrorMessages = null,
     Object? isSubmitting = null,
+    Object? authFailureOrSuccessOption = null,
   }) {
     return _then(_$HomeStateImpl(
       username: null == username
@@ -340,6 +525,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
+      authFailureOrSuccessOption: null == authFailureOrSuccessOption
+          ? _value.authFailureOrSuccessOption
+          : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -350,7 +539,8 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
   const _$HomeStateImpl(
       {required this.username,
       required this.showErrorMessages,
-      required this.isSubmitting});
+      required this.isSubmitting,
+      required this.authFailureOrSuccessOption});
 
   @override
   final Username username;
@@ -358,10 +548,12 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
+  @override
+  final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeState(username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting)';
+    return 'HomeState(username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -371,7 +563,9 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
       ..add(DiagnosticsProperty('type', 'HomeState'))
       ..add(DiagnosticsProperty('username', username))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
-      ..add(DiagnosticsProperty('isSubmitting', isSubmitting));
+      ..add(DiagnosticsProperty('isSubmitting', isSubmitting))
+      ..add(DiagnosticsProperty(
+          'authFailureOrSuccessOption', authFailureOrSuccessOption));
   }
 
   @override
@@ -384,12 +578,16 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting));
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.authFailureOrSuccessOption,
+                    authFailureOrSuccessOption) ||
+                other.authFailureOrSuccessOption ==
+                    authFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, username, showErrorMessages, isSubmitting);
+  int get hashCode => Object.hash(runtimeType, username, showErrorMessages,
+      isSubmitting, authFailureOrSuccessOption);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -404,7 +602,9 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {required final Username username,
       required final bool showErrorMessages,
-      required final bool isSubmitting}) = _$HomeStateImpl;
+      required final bool isSubmitting,
+      required final Option<Either<AuthFailure, Unit>>
+          authFailureOrSuccessOption}) = _$HomeStateImpl;
 
   @override
   Username get username;
@@ -412,6 +612,8 @@ abstract class _HomeState implements HomeState {
   bool get showErrorMessages;
   @override
   bool get isSubmitting;
+  @override
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
