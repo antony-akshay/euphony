@@ -4,19 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeWidgets {
   static void usernamemodule(BuildContext context) {
+    TextEditingController usernametext = TextEditingController();
     showDialog(
       context: context,
       builder: (context) => BlocConsumer<HomeBloc, HomeState>(
         listener: (context, state) {
-          state.authFailureOrSuccessOption.fold(() {}, (either) {
-            return either.fold((failure) {
-              final message = failure.map(
-                  serverError: (_) => 'server error',
-                  usernameIsAlreadyInUse: (_) => "usernameIsAlreadyInUse");
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(message)));
-            }, (r) {});
-          });
+          // state.authFailureOrSuccessOption.fold(() {}, (either) {
+          //   return either.fold((failure) {
+          //     final message = failure.map(
+          //         serverError: (_) => 'server error',
+          //         usernameIsAlreadyInUse: (_) => "usernameIsAlreadyInUse");
+          //     ScaffoldMessenger.of(context)
+          //         .showSnackBar(SnackBar(content: Text(message)));
+          //   }, (r) {});
+          // });
         },
         builder: (context, state) {
           return AlertDialog(
@@ -29,6 +30,7 @@ class HomeWidgets {
                 child: ListView(
                   children: [
                     TextFormField(
+                      controller: usernametext,
                       decoration: const InputDecoration(
                         hintText: 'Enter username',
                         hintStyle: TextStyle(
@@ -53,8 +55,16 @@ class HomeWidgets {
                     TextButton(
                       onPressed: () {
                         // context.read<HomeBloc>().add(SubmitUsername());
+                        try {
+                          context.read<HomeBloc>().add(HomeEvent.usernameSubmit(usernametext.text));
+                        } catch (e) {
+                          print(e);
+                        }
                       },
-                      child: const Text('Submit'),
+                      child: Center(
+                          child: state.isSubmitting
+                              ? CircularProgressIndicator()
+                              : Text('submit')),
                     ),
                   ],
                 ),

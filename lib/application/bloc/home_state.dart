@@ -7,6 +7,7 @@ class HomeState with _$HomeState {
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+    required bool isusernamepresent
 
   }) = _HomeState;
 
@@ -14,6 +15,7 @@ class HomeState with _$HomeState {
     username : Username(''),
     showErrorMessages: false,
     isSubmitting: false,
-    authFailureOrSuccessOption: none()
+    authFailureOrSuccessOption: none(),
+    isusernamepresent: false
   );
 }
