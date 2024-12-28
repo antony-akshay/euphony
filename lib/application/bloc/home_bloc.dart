@@ -31,7 +31,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                 print(state.showErrorMessages);
 
         failureOrSuccess =
-            await usernameApi.submitUsername(userName: e.usernameStr);
+            await usernameApi.submitUsername(userName: e.usernameStr,authkey: e.authkey);
         emit(state.copyWith(
             isSubmitting: false,
             showErrorMessages: true,

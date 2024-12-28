@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeWidgets {
-  static void usernamemodule(BuildContext context) {
+  static void usernamemodule(BuildContext context,String authkey) {
     TextEditingController usernametext = TextEditingController();
     showDialog(
       context: context,
@@ -44,9 +44,9 @@ class HomeWidgets {
                         if (value == null || value.isEmpty) {
                           return 'Username cannot be empty.';
                         }
-                        final usernameRegex = RegExp(r'^[a-z]+$');
+                        final usernameRegex = RegExp(r'^[a-zA-Z0-9._]+$');
                         if (!usernameRegex.hasMatch(value)) {
-                          return 'Username must be lowercase.';
+                          return 'Username not valid';
                         }
                         return null;
                       },
@@ -56,7 +56,7 @@ class HomeWidgets {
                       onPressed: () {
                         // context.read<HomeBloc>().add(SubmitUsername());
                         try {
-                          context.read<HomeBloc>().add(HomeEvent.usernameSubmit(usernametext.text));
+                          context.read<HomeBloc>().add(HomeEvent.usernameSubmit(usernametext.text,authkey));
                         } catch (e) {
                           print(e);
                         }

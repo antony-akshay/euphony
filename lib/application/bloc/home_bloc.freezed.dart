@@ -19,21 +19,22 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
-    required TResult Function(String usernameStr) usernameSubmit,
+    required TResult Function(String usernameStr, String authkey)
+        usernameSubmit,
     required TResult Function() isusernamePresent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
-    TResult? Function(String usernameStr)? usernameSubmit,
+    TResult? Function(String usernameStr, String authkey)? usernameSubmit,
     TResult? Function()? isusernamePresent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
-    TResult Function(String usernameStr)? usernameSubmit,
+    TResult Function(String usernameStr, String authkey)? usernameSubmit,
     TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) =>
@@ -163,7 +164,8 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
-    required TResult Function(String usernameStr) usernameSubmit,
+    required TResult Function(String usernameStr, String authkey)
+        usernameSubmit,
     required TResult Function() isusernamePresent,
   }) {
     return usernameChanged(usernameStr);
@@ -173,7 +175,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
-    TResult? Function(String usernameStr)? usernameSubmit,
+    TResult? Function(String usernameStr, String authkey)? usernameSubmit,
     TResult? Function()? isusernamePresent,
   }) {
     return usernameChanged?.call(usernameStr);
@@ -183,7 +185,7 @@ class _$UsernameChangedImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
-    TResult Function(String usernameStr)? usernameSubmit,
+    TResult Function(String usernameStr, String authkey)? usernameSubmit,
     TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) {
@@ -247,7 +249,7 @@ abstract class _$$UsernameSubmitImplCopyWith<$Res> {
           $Res Function(_$UsernameSubmitImpl) then) =
       __$$UsernameSubmitImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String usernameStr});
+  $Res call({String usernameStr, String authkey});
 }
 
 /// @nodoc
@@ -264,11 +266,16 @@ class __$$UsernameSubmitImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? usernameStr = null,
+    Object? authkey = null,
   }) {
     return _then(_$UsernameSubmitImpl(
       null == usernameStr
           ? _value.usernameStr
           : usernameStr // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == authkey
+          ? _value.authkey
+          : authkey // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -279,14 +286,16 @@ class __$$UsernameSubmitImplCopyWithImpl<$Res>
 class _$UsernameSubmitImpl
     with DiagnosticableTreeMixin
     implements _UsernameSubmit {
-  const _$UsernameSubmitImpl(this.usernameStr);
+  const _$UsernameSubmitImpl(this.usernameStr, this.authkey);
 
   @override
   final String usernameStr;
+  @override
+  final String authkey;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeEvent.usernameSubmit(usernameStr: $usernameStr)';
+    return 'HomeEvent.usernameSubmit(usernameStr: $usernameStr, authkey: $authkey)';
   }
 
   @override
@@ -294,7 +303,8 @@ class _$UsernameSubmitImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HomeEvent.usernameSubmit'))
-      ..add(DiagnosticsProperty('usernameStr', usernameStr));
+      ..add(DiagnosticsProperty('usernameStr', usernameStr))
+      ..add(DiagnosticsProperty('authkey', authkey));
   }
 
   @override
@@ -303,11 +313,12 @@ class _$UsernameSubmitImpl
         (other.runtimeType == runtimeType &&
             other is _$UsernameSubmitImpl &&
             (identical(other.usernameStr, usernameStr) ||
-                other.usernameStr == usernameStr));
+                other.usernameStr == usernameStr) &&
+            (identical(other.authkey, authkey) || other.authkey == authkey));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, usernameStr);
+  int get hashCode => Object.hash(runtimeType, usernameStr, authkey);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -322,32 +333,33 @@ class _$UsernameSubmitImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
-    required TResult Function(String usernameStr) usernameSubmit,
+    required TResult Function(String usernameStr, String authkey)
+        usernameSubmit,
     required TResult Function() isusernamePresent,
   }) {
-    return usernameSubmit(usernameStr);
+    return usernameSubmit(usernameStr, authkey);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
-    TResult? Function(String usernameStr)? usernameSubmit,
+    TResult? Function(String usernameStr, String authkey)? usernameSubmit,
     TResult? Function()? isusernamePresent,
   }) {
-    return usernameSubmit?.call(usernameStr);
+    return usernameSubmit?.call(usernameStr, authkey);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
-    TResult Function(String usernameStr)? usernameSubmit,
+    TResult Function(String usernameStr, String authkey)? usernameSubmit,
     TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) {
     if (usernameSubmit != null) {
-      return usernameSubmit(usernameStr);
+      return usernameSubmit(usernameStr, authkey);
     }
     return orElse();
   }
@@ -388,10 +400,11 @@ class _$UsernameSubmitImpl
 }
 
 abstract class _UsernameSubmit implements HomeEvent {
-  const factory _UsernameSubmit(final String usernameStr) =
-      _$UsernameSubmitImpl;
+  const factory _UsernameSubmit(
+      final String usernameStr, final String authkey) = _$UsernameSubmitImpl;
 
   String get usernameStr;
+  String get authkey;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -450,7 +463,8 @@ class _$IsUsernamePresentImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
-    required TResult Function(String usernameStr) usernameSubmit,
+    required TResult Function(String usernameStr, String authkey)
+        usernameSubmit,
     required TResult Function() isusernamePresent,
   }) {
     return isusernamePresent();
@@ -460,7 +474,7 @@ class _$IsUsernamePresentImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
-    TResult? Function(String usernameStr)? usernameSubmit,
+    TResult? Function(String usernameStr, String authkey)? usernameSubmit,
     TResult? Function()? isusernamePresent,
   }) {
     return isusernamePresent?.call();
@@ -470,7 +484,7 @@ class _$IsUsernamePresentImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
-    TResult Function(String usernameStr)? usernameSubmit,
+    TResult Function(String usernameStr, String authkey)? usernameSubmit,
     TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) {

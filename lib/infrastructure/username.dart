@@ -5,15 +5,17 @@ import 'package:dio/dio.dart';
 
 import 'package:evm/domain/core/auth_failures.dart';
 import 'package:evm/infrastructure/usernameapi.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-String url =
-    'http://localhost/events/customer/username?auth_key=PZDXPx_r9v7w79tLBlwFCxUqUqRQVf8H';
+
+
 
 class UsernameAPI implements I_Usernameapi {
   @override
   Future<Either<AuthFailure, Unit>> submitUsername(
-      {required String userName}) async {
+      {required String userName,required String authkey}) async {
+
+        String url =
+    'http://localhost/events/customer/username?auth_key=$authkey';
     try {
       var data = json.encode({"username": userName});
       var dio = Dio();

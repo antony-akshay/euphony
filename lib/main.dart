@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'eventDetails/eventdetails.dart';
-
 void main(List<String> args) {
   runApp(const MyApp());
 }
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeBloc(),
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: Homescreen(),
+            home: Homescreen(username: '',authkey: '',),
           ),
         );
       },
