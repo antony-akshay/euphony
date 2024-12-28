@@ -535,7 +535,6 @@ abstract class _IsUsernamePresent implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  Username get username => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
@@ -555,8 +554,7 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {Username username,
-      bool showErrorMessages,
+      {bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
       bool isusernamepresent});
@@ -577,17 +575,12 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = null,
     Object? showErrorMessages = null,
     Object? isSubmitting = null,
     Object? authFailureOrSuccessOption = null,
     Object? isusernamepresent = null,
   }) {
     return _then(_value.copyWith(
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as Username,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -617,8 +610,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Username username,
-      bool showErrorMessages,
+      {bool showErrorMessages,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
       bool isusernamepresent});
@@ -637,17 +629,12 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = null,
     Object? showErrorMessages = null,
     Object? isSubmitting = null,
     Object? authFailureOrSuccessOption = null,
     Object? isusernamepresent = null,
   }) {
     return _then(_$HomeStateImpl(
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as Username,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -672,14 +659,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
   const _$HomeStateImpl(
-      {required this.username,
-      required this.showErrorMessages,
+      {required this.showErrorMessages,
       required this.isSubmitting,
       required this.authFailureOrSuccessOption,
       required this.isusernamepresent});
 
-  @override
-  final Username username;
   @override
   final bool showErrorMessages;
   @override
@@ -691,7 +675,7 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeState(username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, isusernamepresent: $isusernamepresent)';
+    return 'HomeState(showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, isusernamepresent: $isusernamepresent)';
   }
 
   @override
@@ -699,7 +683,6 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HomeState'))
-      ..add(DiagnosticsProperty('username', username))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty('isSubmitting', isSubmitting))
       ..add(DiagnosticsProperty(
@@ -712,8 +695,6 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            (identical(other.username, username) ||
-                other.username == username) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
@@ -727,8 +708,8 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, showErrorMessages,
-      isSubmitting, authFailureOrSuccessOption, isusernamepresent);
+  int get hashCode => Object.hash(runtimeType, showErrorMessages, isSubmitting,
+      authFailureOrSuccessOption, isusernamepresent);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -741,15 +722,12 @@ class _$HomeStateImpl with DiagnosticableTreeMixin implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {required final Username username,
-      required final bool showErrorMessages,
+      {required final bool showErrorMessages,
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption,
       required final bool isusernamepresent}) = _$HomeStateImpl;
 
-  @override
-  Username get username;
   @override
   bool get showErrorMessages;
   @override

@@ -21,8 +21,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       await event.map(usernameChanged: (e) async {
         //print('hello');
         //print(Username(e.usernameStr));
-        emit(state.copyWith(
-            username: Username(e.usernameStr), showErrorMessages: true));
+        // emit(state.copyWith(
+        //      ,showErrorMessages: true));
 
       }, usernameSubmit: (e) async {
         emit(
