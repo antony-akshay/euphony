@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:evm/domain/core/auth_failures.dart';
-import 'package:evm/domain/home/value_objects.dart';
 import 'package:evm/infrastructure/username.dart';
 import 'package:evm/infrastructure/usernameapi.dart';
 import 'package:flutter/foundation.dart';
@@ -38,7 +37,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             authFailureOrSuccessOption: optionOf(failureOrSuccess)));
                     print(state.showErrorMessages);
 
-      }, isusernamePresent: (_IsUsernamePresent value) {  });
+      });
     });
   }
 }

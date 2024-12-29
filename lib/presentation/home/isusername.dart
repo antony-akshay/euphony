@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeWidgets {
-  static void usernamemodule(BuildContext context,String authkey) {
+  static void usernamemodule(BuildContext context, String authkey) {
     TextEditingController usernametext = TextEditingController();
     showDialog(
       context: context,
@@ -56,7 +56,8 @@ class HomeWidgets {
                       onPressed: () {
                         // context.read<HomeBloc>().add(SubmitUsername());
                         try {
-                          context.read<HomeBloc>().add(HomeEvent.usernameSubmit(usernametext.text,authkey));
+                          context.read<HomeBloc>().add(HomeEvent.usernameSubmit(
+                              usernametext.text, authkey));
                         } catch (e) {
                           print(e);
                         }

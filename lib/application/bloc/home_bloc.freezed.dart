@@ -16,26 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeEvent {
+  String get usernameStr => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String usernameStr, String authkey)
         usernameSubmit,
-    required TResult Function() isusernamePresent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
     TResult? Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult? Function()? isusernamePresent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,23 +41,26 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_UsernameSubmit value) usernameSubmit,
-    required TResult Function(_IsUsernamePresent value) isusernamePresent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_UsernameSubmit value)? usernameSubmit,
-    TResult? Function(_IsUsernamePresent value)? isusernamePresent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_UsernameSubmit value)? usernameSubmit,
-    TResult Function(_IsUsernamePresent value)? isusernamePresent,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HomeEventCopyWith<HomeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,6 +68,8 @@ mixin _$HomeEvent {
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res, HomeEvent>;
+  @useResult
+  $Res call({String usernameStr});
 }
 
 /// @nodoc
@@ -81,13 +84,27 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? usernameStr = null,
+  }) {
+    return _then(_value.copyWith(
+      usernameStr: null == usernameStr
+          ? _value.usernameStr
+          : usernameStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$UsernameChangedImplCopyWith<$Res> {
+abstract class _$$UsernameChangedImplCopyWith<$Res>
+    implements $HomeEventCopyWith<$Res> {
   factory _$$UsernameChangedImplCopyWith(_$UsernameChangedImpl value,
           $Res Function(_$UsernameChangedImpl) then) =
       __$$UsernameChangedImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String usernameStr});
 }
@@ -166,7 +183,6 @@ class _$UsernameChangedImpl
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String usernameStr, String authkey)
         usernameSubmit,
-    required TResult Function() isusernamePresent,
   }) {
     return usernameChanged(usernameStr);
   }
@@ -176,7 +192,6 @@ class _$UsernameChangedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
     TResult? Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult? Function()? isusernamePresent,
   }) {
     return usernameChanged?.call(usernameStr);
   }
@@ -186,7 +201,6 @@ class _$UsernameChangedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -200,7 +214,6 @@ class _$UsernameChangedImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_UsernameSubmit value) usernameSubmit,
-    required TResult Function(_IsUsernamePresent value) isusernamePresent,
   }) {
     return usernameChanged(this);
   }
@@ -210,7 +223,6 @@ class _$UsernameChangedImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_UsernameSubmit value)? usernameSubmit,
-    TResult? Function(_IsUsernamePresent value)? isusernamePresent,
   }) {
     return usernameChanged?.call(this);
   }
@@ -220,7 +232,6 @@ class _$UsernameChangedImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_UsernameSubmit value)? usernameSubmit,
-    TResult Function(_IsUsernamePresent value)? isusernamePresent,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -234,20 +245,24 @@ abstract class _UsernameChanged implements HomeEvent {
   const factory _UsernameChanged(final String usernameStr) =
       _$UsernameChangedImpl;
 
+  @override
   String get usernameStr;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UsernameChangedImplCopyWith<_$UsernameChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UsernameSubmitImplCopyWith<$Res> {
+abstract class _$$UsernameSubmitImplCopyWith<$Res>
+    implements $HomeEventCopyWith<$Res> {
   factory _$$UsernameSubmitImplCopyWith(_$UsernameSubmitImpl value,
           $Res Function(_$UsernameSubmitImpl) then) =
       __$$UsernameSubmitImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String usernameStr, String authkey});
 }
@@ -335,7 +350,6 @@ class _$UsernameSubmitImpl
     required TResult Function(String usernameStr) usernameChanged,
     required TResult Function(String usernameStr, String authkey)
         usernameSubmit,
-    required TResult Function() isusernamePresent,
   }) {
     return usernameSubmit(usernameStr, authkey);
   }
@@ -345,7 +359,6 @@ class _$UsernameSubmitImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String usernameStr)? usernameChanged,
     TResult? Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult? Function()? isusernamePresent,
   }) {
     return usernameSubmit?.call(usernameStr, authkey);
   }
@@ -355,7 +368,6 @@ class _$UsernameSubmitImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String usernameStr)? usernameChanged,
     TResult Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult Function()? isusernamePresent,
     required TResult orElse(),
   }) {
     if (usernameSubmit != null) {
@@ -369,7 +381,6 @@ class _$UsernameSubmitImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_UsernameSubmit value) usernameSubmit,
-    required TResult Function(_IsUsernamePresent value) isusernamePresent,
   }) {
     return usernameSubmit(this);
   }
@@ -379,7 +390,6 @@ class _$UsernameSubmitImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_UsernameChanged value)? usernameChanged,
     TResult? Function(_UsernameSubmit value)? usernameSubmit,
-    TResult? Function(_IsUsernamePresent value)? isusernamePresent,
   }) {
     return usernameSubmit?.call(this);
   }
@@ -389,7 +399,6 @@ class _$UsernameSubmitImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_UsernameChanged value)? usernameChanged,
     TResult Function(_UsernameSubmit value)? usernameSubmit,
-    TResult Function(_IsUsernamePresent value)? isusernamePresent,
     required TResult orElse(),
   }) {
     if (usernameSubmit != null) {
@@ -403,134 +412,16 @@ abstract class _UsernameSubmit implements HomeEvent {
   const factory _UsernameSubmit(
       final String usernameStr, final String authkey) = _$UsernameSubmitImpl;
 
+  @override
   String get usernameStr;
   String get authkey;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UsernameSubmitImplCopyWith<_$UsernameSubmitImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$IsUsernamePresentImplCopyWith<$Res> {
-  factory _$$IsUsernamePresentImplCopyWith(_$IsUsernamePresentImpl value,
-          $Res Function(_$IsUsernamePresentImpl) then) =
-      __$$IsUsernamePresentImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$IsUsernamePresentImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$IsUsernamePresentImpl>
-    implements _$$IsUsernamePresentImplCopyWith<$Res> {
-  __$$IsUsernamePresentImplCopyWithImpl(_$IsUsernamePresentImpl _value,
-      $Res Function(_$IsUsernamePresentImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$IsUsernamePresentImpl
-    with DiagnosticableTreeMixin
-    implements _IsUsernamePresent {
-  const _$IsUsernamePresentImpl();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeEvent.isusernamePresent()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeEvent.isusernamePresent'));
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$IsUsernamePresentImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String usernameStr) usernameChanged,
-    required TResult Function(String usernameStr, String authkey)
-        usernameSubmit,
-    required TResult Function() isusernamePresent,
-  }) {
-    return isusernamePresent();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String usernameStr)? usernameChanged,
-    TResult? Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult? Function()? isusernamePresent,
-  }) {
-    return isusernamePresent?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String usernameStr)? usernameChanged,
-    TResult Function(String usernameStr, String authkey)? usernameSubmit,
-    TResult Function()? isusernamePresent,
-    required TResult orElse(),
-  }) {
-    if (isusernamePresent != null) {
-      return isusernamePresent();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UsernameChanged value) usernameChanged,
-    required TResult Function(_UsernameSubmit value) usernameSubmit,
-    required TResult Function(_IsUsernamePresent value) isusernamePresent,
-  }) {
-    return isusernamePresent(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UsernameChanged value)? usernameChanged,
-    TResult? Function(_UsernameSubmit value)? usernameSubmit,
-    TResult? Function(_IsUsernamePresent value)? isusernamePresent,
-  }) {
-    return isusernamePresent?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UsernameChanged value)? usernameChanged,
-    TResult Function(_UsernameSubmit value)? usernameSubmit,
-    TResult Function(_IsUsernamePresent value)? isusernamePresent,
-    required TResult orElse(),
-  }) {
-    if (isusernamePresent != null) {
-      return isusernamePresent(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _IsUsernamePresent implements HomeEvent {
-  const factory _IsUsernamePresent() = _$IsUsernamePresentImpl;
 }
 
 /// @nodoc
