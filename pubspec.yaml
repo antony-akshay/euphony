@@ -46,6 +46,7 @@ dependencies:
   dartz: ^0.10.1
   increment_decrement_form_field: ^1.0.0
   dio: ^5.7.0
+  flutter_svg: ^2.1.0
 
 dev_dependencies:
   flutter_test:
