@@ -47,6 +47,7 @@ dependencies:
   increment_decrement_form_field: ^1.0.0
   dio: ^5.7.0
   flutter_svg: ^2.1.0
+  grouped_list: ^6.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:evm/application/bloc/home_bloc.dart';
 import 'package:evm/presentation/chat/chathome.dart';
 import 'package:evm/presentation/chat/chatscreen.dart';
+import 'package:evm/presentation/chat/chatting.dart';
 import 'package:evm/presentation/chat/history.dart';
 import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:evm/presentation/chat/poseInstruction.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeBloc(),
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: Chatscreen()
+            home: chattingScreen()
           ),
         );
       },

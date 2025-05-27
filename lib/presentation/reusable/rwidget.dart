@@ -1,3 +1,4 @@
+import 'package:evm/presentation/chat/history.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -84,7 +85,12 @@ class Rwidget {
                     children: [
                       Icon(Icons.search, color: Colors.white),
                       SizedBox(width: 5),
-                      Icon(Icons.open_in_new, color: Colors.white, size: 24),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HistoryPage(),));
+                        },
+                          child: Icon(Icons.open_in_new,
+                              color: Colors.white, size: 24)),
                     ],
                   ),
                 ],
@@ -108,11 +114,13 @@ class Rwidget {
                   children: List.generate(3, (index) {
                     return ListTile(
                       leading: const Icon(Icons.notes, color: Colors.white),
-                      title:  Text("Event Cancelation",
-                          style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12),),
+                      title: Text(
+                        "Event Cancelation",
+                        style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12),
+                      ),
                       trailing: PopupMenuButton(
                         icon: const Icon(Icons.more_vert, color: Colors.white),
                         color: Colors.grey[900],
@@ -120,14 +128,16 @@ class Rwidget {
                           PopupMenuItem(
                             value: 'rename',
                             child: Row(
-                              children:  [
+                              children: [
                                 Icon(Icons.edit, color: Colors.white, size: 18),
                                 SizedBox(width: 8),
-                                Text('Rename',
-                                    style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12),)
+                                Text(
+                                  'Rename',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12),
+                                )
                               ],
                             ),
                           ),
@@ -140,24 +150,26 @@ class Rwidget {
                                 SizedBox(width: 8),
                                 Text('Archive',
                                     style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12)),
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12)),
                               ],
                             ),
                           ),
                           PopupMenuItem(
                             value: 'delete',
                             child: Row(
-                              children:  [
+                              children: [
                                 Icon(Icons.delete,
                                     color: Colors.white, size: 18),
                                 SizedBox(width: 8),
-                                Text('Delete',
-                                    style: GoogleFonts.poppins(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12),),
+                                Text(
+                                  'Delete',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12),
+                                ),
                               ],
                             ),
                           ),
