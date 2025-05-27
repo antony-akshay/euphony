@@ -1,5 +1,5 @@
-import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:evm/presentation/chat/poseInstruction.dart';
+import 'package:evm/presentation/reusable/rwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:svg_flutter/svg.dart';
@@ -10,7 +10,34 @@ class Chathome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Rwidget.drawer(context),
       backgroundColor: Color.fromRGBO(27, 28, 29, 1),
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(27, 28, 29, 1),
+        leading: Builder(
+      builder: (context) {
+        return IconButton(
+          icon: const Icon(Icons.menu,color: Colors.white,),
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+        );
+      },
+    ),
+  
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: CircleAvatar(
+              radius: 12,
+              child: SvgPicture.asset(
+                'assets/images/OBJECTS.svg',
+                fit: BoxFit.fill,
+              ),
+            ),
+          )
+        ],
+      ),
       body: SafeArea(child: 
       Column(
         crossAxisAlignment: CrossAxisAlignment.center,

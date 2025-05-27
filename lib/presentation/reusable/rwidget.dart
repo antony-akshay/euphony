@@ -1,6 +1,5 @@
 import 'package:evm/presentation/chat/chathome.dart';
 import 'package:evm/presentation/chat/history.dart';
-import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,5 +1,5 @@
-import 'package:evm/presentation/chat/chathome.dart';
 import 'package:evm/presentation/chat/imageUpload.dart';
+import 'package:evm/presentation/reusable/rwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:svg_flutter/svg.dart';
@@ -11,9 +11,14 @@ class PoseInstruction extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(27, 28, 29, 1),
+      drawer: Rwidget.drawer(context),
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(27, 28, 29, 1),
-        leading: const Icon(Icons.menu_rounded, color: Colors.white),
+        leading: GestureDetector(
+          onTap: (){
+            Scaffold.hasDrawer(context);
+          },
+          child: const Icon(Icons.menu_rounded, color: Colors.white)),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
