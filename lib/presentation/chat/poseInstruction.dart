@@ -1,3 +1,5 @@
+import 'package:evm/presentation/chat/chathome.dart';
+import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:svg_flutter/svg.dart';
@@ -105,21 +107,26 @@ class PoseInstruction extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: Center(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 23, vertical: 11),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xFFE27FE5),
-                            Color(0xFF338FE3),
-                          ],
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Imageupload()));
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 23, vertical: 11),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFE27FE5),
+                              Color(0xFF338FE3),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child:  Text(
-                        'Continue',
-                        style: GoogleFonts.poppins(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 10),
+                        child:  Text(
+                          'Continue',
+                          style: GoogleFonts.poppins(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 10),
+                        ),
                       ),
                     ),
                   ),

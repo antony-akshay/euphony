@@ -1,4 +1,6 @@
+import 'package:evm/presentation/chat/chathome.dart';
 import 'package:evm/presentation/chat/history.dart';
+import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -26,22 +28,29 @@ class Rwidget {
             // StyleMate button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.grey[800],
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  children: const [
-                    CircleAvatar(
-                      radius: 12,
-                      backgroundColor: Colors.deepPurple,
-                      child: Icon(Icons.person, size: 14, color: Colors.white),
-                    ),
-                    SizedBox(width: 8),
-                    Text("StyleMate", style: TextStyle(color: Colors.white)),
-                  ],
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Chathome()));
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[800],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    children: const [
+                      CircleAvatar(
+                        radius: 12,
+                        backgroundColor: Colors.deepPurple,
+                        child:
+                            Icon(Icons.person, size: 14, color: Colors.white),
+                      ),
+                      SizedBox(width: 8),
+                      Text("StyleMate", style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -86,9 +95,11 @@ class Rwidget {
                       Icon(Icons.search, color: Colors.white),
                       SizedBox(width: 5),
                       GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HistoryPage(),));
-                        },
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => HistoryPage(),
+                            ));
+                          },
                           child: Icon(Icons.open_in_new,
                               color: Colors.white, size: 24)),
                     ],

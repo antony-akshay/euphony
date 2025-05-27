@@ -1,3 +1,5 @@
+import 'package:evm/presentation/chat/imageUpload.dart';
+import 'package:evm/presentation/chat/poseInstruction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:svg_flutter/svg.dart';
@@ -75,36 +77,41 @@ class Chathome extends StatelessWidget {
               children: [
                 SvgPicture.asset('assets/images/Vector.svg'),
                 SizedBox(height: 15),
-                Container(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFFE27FE5), // Pink
-                      Color(0xFF338FE3), // Blue
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      // ignore: deprecated_member_use
-                      color: Colors.blue.withOpacity(0.3),
-                      blurRadius: 8,
-                      offset: Offset(0, 4),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>PoseInstruction()));
+                  },
+                  child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFFE27FE5), // Pink
+                        Color(0xFF338FE3), // Blue
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
                     ),
-                  ],
+                    boxShadow: [
+                      BoxShadow(
+                        // ignore: deprecated_member_use
+                        color: Colors.blue.withOpacity(0.3),
+                        blurRadius: 8,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    'Make your style',
+                    style: GoogleFonts.poppins(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400
+                    )
+                  ),
+                            ),
                 ),
-                child: Text(
-                  'Make your style',
-                  style: GoogleFonts.poppins(
-                    color: Colors.black,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w400
-                  )
-                ),
-                          ),
               ],
             ),
           ],),),
