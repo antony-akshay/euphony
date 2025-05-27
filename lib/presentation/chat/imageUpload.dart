@@ -50,6 +50,7 @@ class Imageupload extends StatelessWidget {
       ),
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 24),
             Column(
@@ -63,7 +64,7 @@ class Imageupload extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -112,6 +113,93 @@ class Imageupload extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
+            Stack(
+  alignment: Alignment.center,
+  children: [
+    Container(
+      width: 184 * 2, // 368
+      height: 324,
+      decoration: BoxDecoration(
+        color: Colors.grey[850],
+        borderRadius: BorderRadius.circular(16),
+      ),
+    ),
+    Positioned(
+      left: 40,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 60,
+              height: 60,
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xFFE27FE5),
+                    Color(0xFF338FE3),
+                  ],
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('assets/images/add.svg'),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Upload Photo',
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 6,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+    Positioned(
+      right: 40,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            padding: const EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xFFE27FE5),
+                  Color(0xFF338FE3),
+                ],
+              ),
+            ),
+            child: Column(
+              children: [
+                SvgPicture.asset('assets/images/camera-upload.svg'),
+                const SizedBox(height: 4),
+                Text(
+                  'Take picture',
+                  style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 6,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  ],
+),
+
             // Stack(
             //   children: [
             //     SvgPicture.asset(
