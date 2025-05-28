@@ -1,6 +1,5 @@
 import 'package:evm/application/bloc/home_bloc.dart';
 import 'package:evm/presentation/chat/chatting.dart';
-import 'package:evm/presentation/chat/dressOptions.dart';
 import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:evm/presentation/chat/uploadPreview.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeBloc(),
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: Dressoptions()
+            home: Uploadpreview()
           ),
         );
       },

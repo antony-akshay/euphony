@@ -160,7 +160,7 @@ class Uploadpreview extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
-                                color: Colors.grey[800],
+                                color: Color.fromRGBO(33, 37, 42, 1),
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               child: Column(
@@ -255,7 +255,7 @@ class Uploadpreview extends StatelessWidget {
       width: 80,
       padding: const EdgeInsets.symmetric(horizontal: 6),
       decoration: BoxDecoration(
-        color: Colors.grey[800],
+        color: Color.fromRGBO(33, 37, 42, 1),
         borderRadius: BorderRadius.circular(6),
       ),
       child: DropdownButtonHideUnderline(
