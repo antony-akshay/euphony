@@ -1,4 +1,6 @@
 import 'package:evm/domain/chat/messageModel.dart';
+import 'package:evm/presentation/chat/dressOptions.dart';
+import 'package:evm/presentation/chat/imageUpload.dart';
 import 'package:evm/presentation/reusable/rwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -181,7 +183,8 @@ class _chattingScreenState extends State<chattingScreen> {
                                     Text(
                                       "regenerate",
                                       style: GoogleFonts.poppins(
-                                        color: const Color.fromARGB(131, 255, 255, 255),
+                                        color: const Color.fromARGB(
+                                            131, 255, 255, 255),
                                         fontSize: 10,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -190,7 +193,8 @@ class _chattingScreenState extends State<chattingScreen> {
                                     Text(
                                       "copy",
                                       style: GoogleFonts.poppins(
-                                        color: const Color.fromARGB(131, 255, 255, 255),
+                                        color: const Color.fromARGB(
+                                            131, 255, 255, 255),
                                         fontSize: 10,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -235,13 +239,19 @@ class _chattingScreenState extends State<chattingScreen> {
                           IconButton(
                             icon: const Icon(Icons.camera_alt_outlined,
                                 color: Colors.white70),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Imageupload()));
+                            },
                           ),
                           IconButton(
                             icon: const Icon(Icons.link, color: Colors.white70),
                             onPressed: () {},
                           ),
-                          SvgPicture.asset('assets/images/styleme.svg'),
+                          GestureDetector(
+                            onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Dressoptions())),
+                              child: SvgPicture.asset(
+                                  'assets/images/styleme.svg')),
                         ],
                       ),
                       IconButton(

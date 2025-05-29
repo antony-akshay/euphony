@@ -14,22 +14,22 @@ class Imageupload extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(27, 28, 29, 1),
         leading: GestureDetector(
-          onTap: (){
-            Builder(
-          builder: (context) {
-            return IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          },
-        );
-          },
-          child: const Icon(Icons.menu_rounded, color: Colors.white)),
+            onTap: () {
+              Builder(
+                builder: (context) {
+                  return IconButton(
+                    icon: const Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                  );
+                },
+              );
+            },
+            child: const Icon(Icons.menu_rounded, color: Colors.white)),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -41,12 +41,18 @@ class Imageupload extends StatelessWidget {
             ),
           ],
         ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right:12.0),
-          child: CircleAvatar(radius: 12,child: SvgPicture.asset('assets/images/OBJECTS.svg',fit: BoxFit.fill,),),
-        )
-      ],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: CircleAvatar(
+              radius: 12,
+              child: SvgPicture.asset(
+                'assets/images/OBJECTS.svg',
+                fit: BoxFit.fill,
+              ),
+            ),
+          )
+        ],
       ),
       body: SafeArea(
         child: Column(
@@ -114,91 +120,91 @@ class Imageupload extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Stack(
-  alignment: Alignment.center,
-  children: [
-    Container(
-      width: 184 * 2, // 368
-      height: 324,
-      decoration: BoxDecoration(
-        color: Colors.grey[850],
-        borderRadius: BorderRadius.circular(16),
-      ),
-    ),
-    Positioned(
-      left: 40,
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 60,
-              height: 60,
-              padding: const EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xFFE27FE5),
-                    Color(0xFF338FE3),
-                  ],
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 184 * 2, // 368
+                  height: 324,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[850],
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset('assets/images/add.svg'),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Upload Photo',
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontSize: 6,
+                Positioned(
+                  left: 40,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 60,
+                          height: 60,
+                          padding: const EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFFE27FE5),
+                                Color(0xFF338FE3),
+                              ],
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.asset('assets/images/add.svg'),
+                              const SizedBox(height: 4),
+                              Text(
+                                'Upload Photo',
+                                style: GoogleFonts.poppins(
+                                  color: Colors.white,
+                                  fontSize: 6,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-    Positioned(
-      right: 40,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 60,
-            height: 60,
-            padding: const EdgeInsets.all(3),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xFFE27FE5),
-                  Color(0xFF338FE3),
-                ],
-              ),
-            ),
-            child: Column(
-              children: [
-                SvgPicture.asset('assets/images/camera-upload.svg'),
-                const SizedBox(height: 4),
-                Text(
-                  'Take picture',
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontSize: 6,
+                ),
+                Positioned(
+                  right: 40,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        padding: const EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFE27FE5),
+                              Color(0xFF338FE3),
+                            ],
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            SvgPicture.asset('assets/images/camera-upload.svg'),
+                            const SizedBox(height: 4),
+                            Text(
+                              'Take picture',
+                              style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontSize: 6,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    ),
-  ],
-),
 
             // Stack(
             //   children: [

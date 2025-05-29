@@ -14,11 +14,12 @@ class Dressoptions extends StatelessWidget {
       drawer: Rwidget.drawer(context),
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(27, 28, 29, 1),
-        leading: GestureDetector(
-            onTap: () {
-              Scaffold.hasDrawer(context);
-            },
-            child: const Icon(Icons.menu_rounded, color: Colors.white)),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu_rounded, color: Colors.white),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -115,9 +116,9 @@ class Dressoptions extends StatelessWidget {
                 fontSize: 10,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 18),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 50),
               height: 500,
               child: RawScrollbar(
                 thumbColor: Colors.white,
