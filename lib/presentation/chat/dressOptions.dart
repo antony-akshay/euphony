@@ -125,7 +125,7 @@ class Dressoptions extends StatelessWidget {
                 radius: const Radius.circular(8),
                 thickness: 4,
                 thumbVisibility: true,
-                child: ListView.builder(
+                child: ListView.separated(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   itemCount: 10,
                   itemBuilder: (context, index) {
@@ -174,7 +174,9 @@ class Dressoptions extends StatelessWidget {
                         ],
                       ),
                     );
-                  },
+                  }, separatorBuilder: (BuildContext context, int index) { 
+                    return SizedBox(height: 10,);
+                   },
                 ),
               ),
             ),
