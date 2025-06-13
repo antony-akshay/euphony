@@ -1,17 +1,3 @@
-# evm
+# Wei – Event Booking Platform
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# euphony
+Wei is a Flutter-based event booking platform built using Domain-Driven Design (DDD) architecture to ensure scalability, maintainability, and clear separation of concerns. Developed for Tree Technologies, Wei draws inspiration from platforms like Luma, offering a seamless experience for discovering, booking, and managing events. The app allows users to explore a variety of events—workshops, webinars, meetups, and more—while giving organizers powerful tools for event creation, RSVP tracking, attendee management, and real-time notifications. With a clean, mobile-first interface and robust Flutter implementation, Wei delivers a smooth cross-platform experience tailored for both users and event hosts.
